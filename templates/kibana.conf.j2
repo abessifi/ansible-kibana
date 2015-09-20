@@ -5,6 +5,6 @@ stop on shutdown
 
 respawn
 setuid kibana
-chdir {{ kibana_dir }}/kibana-{{ kibana_version }}-{{ kibana_os }}-{{ kibana_arch }}
+chdir {{ kibana_dir }}/{{ kibana_package_name }}
 
-exec ./bin/kibana >> {{ kibana_log }} 2>&1
+exec ./bin/kibana >> {{ kibana_log_file }} 2>&1

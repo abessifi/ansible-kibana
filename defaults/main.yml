@@ -1,13 +1,18 @@
 ---
-kibana_version: "4.0.1"
+
+kibana_version: "4.1.1"
 kibana_os: "linux"
 kibana_arch: "x64"
-kibana_dir: "/opt"
+kibana_package_name: "kibana-{{ kibana_version }}-{{ kibana_os }}-{{ kibana_arch }}"
+kibana_download_url: "https://download.elasticsearch.org/kibana/kibana/{{ kibana_package_name }}.zip"
+kibana_dir: "/usr/local"
 kibana_host: "0.0.0.0"
 kibana_port: "5601"
 kibana_elasticsearch: "http://localhost:9200"
-kibana_index: ".kibana"
-
-kibana_log: /var/log/kibana.log
+kibana_index: ".kibana" #Name of Kibana index in ElasticSearch
+kibana_log_dir: "/var/log/kibana"
+kibana_log_file: "{{ kibana_log_dir }}/kibana.log"
 kibana_log_rotate_count: 5
 kibana_log_rotate_interval: daily
+kibana_service_enabled: yes
+kibana_service_state: started
